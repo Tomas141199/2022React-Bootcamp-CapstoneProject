@@ -1,3 +1,4 @@
+import React from "react";
 import { Label } from "./../../icons";
 import { useState } from "react";
 import { ProductActions } from "./../";
@@ -9,9 +10,10 @@ import {
   CardName,
   CardPrice,
 } from "./styled";
-import PropTypes from "prop-types";
+import { types } from "./proptypes";
 
-const ProductCard = ({ id, title, category, price, urlImage, alt }) => {
+const ProductCard = React.memo(function ProductCard({ product }) {
+  const { title, category, price, urlImage, alt } = product;
   const [activeClass, setActiveClass] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,7 +40,7 @@ const ProductCard = ({ id, title, category, price, urlImage, alt }) => {
           <Label fill="#a1c5cc" />
           {category}
         </CategoryLabel>
-        <ProductActions activeClass={activeClass} id={id} />
+        <ProductActions activeClass={activeClass} product={product} />
         <img src={urlImage} alt={alt} onLoad={loadImage} />
       </CardHeader>
       <CardBody>
@@ -47,14 +49,8 @@ const ProductCard = ({ id, title, category, price, urlImage, alt }) => {
       </CardBody>
     </CardWrapper>
   );
-};
+});
 
-ProductCard.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  category: PropTypes.string,
-  price: PropTypes.number,
-  urlImage: PropTypes.string,
-};
+ProductCard.propTypes = types;
 
 export default ProductCard;
