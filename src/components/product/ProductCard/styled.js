@@ -13,6 +13,7 @@ export const CardWrapper = styled.div`
   padding: 10px;
   height: 490px;
   border-radius: 5px;
+
   &:before {
     position: absolute;
     content: "";
@@ -49,21 +50,6 @@ export const CardWrapper = styled.div`
     bottom: -10px;
     right: -10px;
     opacity: 1;
-  }
-
-  &.loading {
-    background-color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    span:empty,
-    div img,
-    div h3:empty,
-    div p:empty {
-      background: #eee;
-      background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
-      border-radius: 5px;
-      background-size: 200% 100%;
-      animation: 1.5s ${Shine} linear infinite;
-    }
   }
 `;
 

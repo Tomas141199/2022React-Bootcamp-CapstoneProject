@@ -1,4 +1,4 @@
-import React from "react";
+import { LazyImage } from "../LazyImage";
 import { Content, ContentTitle, ContentDescription } from "./styled";
 const Slides = ({ data, currentSlide }) => {
   return (
@@ -10,7 +10,7 @@ const Slides = ({ data, currentSlide }) => {
         >
           {index === currentSlide && (
             <>
-              <img src={slide.urlImage} alt={slide.title} />
+              <LazyImage src={slide.urlImage} alt={slide.title} />
               <Content>
                 <ContentTitle>{slide.title}</ContentTitle>
                 <ContentDescription>{slide.description}</ContentDescription>

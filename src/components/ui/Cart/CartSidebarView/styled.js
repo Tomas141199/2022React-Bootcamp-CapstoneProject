@@ -35,6 +35,7 @@ export const Badge = styled.span`
 `;
 
 export const BagContainer = styled(Link)`
+  text-decoration: none;
   position: relative;
   z-index: 6;
   display: flex;
@@ -42,6 +43,11 @@ export const BagContainer = styled(Link)`
   align-items: center;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
+  color: black;
+
+  &:active {
+    color: var(--primary-green);
+  }
 
   &:hover {
     animation: 1s ${Bounce} 1;

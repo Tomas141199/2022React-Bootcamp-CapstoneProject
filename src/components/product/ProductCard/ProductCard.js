@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "./../../icons";
-import { useState } from "react";
 import { ProductActions } from "./../";
+import { LazyImage } from "../../ui";
+
 import {
   CardWrapper,
   CardHeader,
@@ -15,7 +16,6 @@ import { types } from "./proptypes";
 const ProductCard = React.memo(function ProductCard({ product }) {
   const { title, category, price, urlImage, alt } = product;
   const [activeClass, setActiveClass] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleMouseEnter = () => {
     setActiveClass(true);
@@ -25,15 +25,10 @@ const ProductCard = React.memo(function ProductCard({ product }) {
     setActiveClass(false);
   };
 
-  const loadImage = () => {
-    setIsLoading(false);
-  };
-
   return (
     <CardWrapper
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`${isLoading ? "loading" : null}`}
     >
       <CardHeader>
         <CategoryLabel>
@@ -41,7 +36,7 @@ const ProductCard = React.memo(function ProductCard({ product }) {
           {category}
         </CategoryLabel>
         <ProductActions activeClass={activeClass} product={product} />
-        <img src={urlImage} alt={alt} onLoad={loadImage} />
+        <LazyImage src={urlImage} alt={alt} />
       </CardHeader>
       <CardBody>
         <CardName>{title}</CardName>

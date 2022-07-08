@@ -4,3 +4,4 @@ export { default as ProductList } from "./ProductList";
 export { default as SearchResultsPage } from "./SearchResultsPage";
 export { default as CartPage } from "./Cart";
 export { default as CheckoutPage } from "./Checkout";
+export { default as Page404 } from "./Page404";

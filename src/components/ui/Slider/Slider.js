@@ -23,10 +23,6 @@ const Slider = ({ autoScroll, intervalTime }) => {
   }
 
   useEffect(() => {
-    setCurrentSlide(0);
-  }, []);
-
-  useEffect(() => {
     if (autoScroll) {
       auto();
     }

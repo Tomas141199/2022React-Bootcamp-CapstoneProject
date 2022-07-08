@@ -7,3 +7,4 @@ export * from "./Slider";
 export * from "./Slides";
 export * from "./Spinner";
 export * from "./SpinnerBounce";
+export * from "./LazyImage";
