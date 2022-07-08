@@ -19,7 +19,7 @@ export const Heading = styled.header`
     padding: 20px 50px;
   }
 
-  @media (min-width: 405px) {
+  @media (min-width: 314px) {
     justify-content: space-between;
     gap: 1px;
   }

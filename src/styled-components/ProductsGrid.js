@@ -19,10 +19,9 @@ const FadeOut = keyframes`
 `;
 
 export const ProductsGrid = styled.div`
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 40px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 20px;
   animation: ${FadeOut} 0.7s;
 `;

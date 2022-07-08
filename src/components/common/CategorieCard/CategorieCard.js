@@ -1,6 +1,7 @@
 import { ArrowRight } from "../../icons";
 import { CardContainer, CategorieLabel, CategorieLink } from "./styled";
 import { types } from "./proptypes";
+import { LazyImage } from "../../ui";
 
 const CategorieCard = ({ id, name, alt, urlImage, slugs }) => {
   return (
@@ -17,7 +18,7 @@ const CategorieCard = ({ id, name, alt, urlImage, slugs }) => {
       >
         See all <ArrowRight />
       </CategorieLink>
-      <img src={urlImage} alt={alt} />
+      <LazyImage src={urlImage} alt={alt} />
     </CardContainer>
   );
 };

@@ -7,6 +7,7 @@ import {
   SearchResultsPage,
   CartPage,
   CheckoutPage,
+  Page404,
 } from "../pages";
 import ErrorBoundary from "./../error/ErrorBoundary/ErrorBoundary";
 
@@ -29,6 +30,7 @@ export const AppRouter = () => {
         <Route path="cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
       </Route>
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 };

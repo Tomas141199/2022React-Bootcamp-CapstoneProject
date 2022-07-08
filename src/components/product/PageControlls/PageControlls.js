@@ -9,18 +9,13 @@ const PageControlls = ({ setCurrentPage, pages, currentPage }) => {
 
   const handlePage = (e) => {
     const action = e.target.name;
-
-    if (currentPage >= pages) {
-      setCurrentPage(1);
-      return;
-    } else if (currentPage <= 1) {
-      setCurrentPage(pages);
-      return;
-    }
-
-    setCurrentPage((currentPage) =>
-      action === "prev" ? currentPage - 1 : currentPage + 1
-    );
+    setCurrentPage((currentPage) => {
+      if (action === "prev") {
+        return currentPage - 1 <= 0 ? pages : currentPage - 1;
+      } else {
+        return currentPage + 1 >= pages + 1 ? 1 : currentPage + 1;
+      }
+    });
   };
 
   return (

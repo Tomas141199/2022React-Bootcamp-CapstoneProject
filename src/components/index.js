@@ -33,4 +33,5 @@ export * from "./ui/Slider";
 export * from "./ui/Slides";
 export * from "./ui/Spinner";
 export * from "./ui/SpinnerBounce";
+export * from "./ui/LazyImage";
 export * from "./ui";

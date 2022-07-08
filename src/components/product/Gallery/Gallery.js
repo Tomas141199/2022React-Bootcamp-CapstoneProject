@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createGalleryAdapter } from "./adapters/image-gallery";
+import { LazyImage } from "./../../ui";
 import {
   GalleryContainer,
   Prev,
@@ -31,7 +32,7 @@ const Gallery = ({ gallery }) => {
       <CurrentImage>
         <Prev name="prev" onClick={(e) => handleControll(e)} />
         <Next name="next" onClick={(e) => handleControll(e)} />
-        <img src={images[currentImage].url} alt="main" />
+        <LazyImage src={images[currentImage].url} alt="main" />
       </CurrentImage>
       <GridImage>
         {images?.map(({ id, url }, i) => (
@@ -41,7 +42,7 @@ const Gallery = ({ gallery }) => {
             current={currentImage === i ? "true" : "false"}
             key={id}
           >
-            <img src={url} alt={url} />
+            <LazyImage src={url} alt={url} />
           </Image>
         ))}
       </GridImage>
