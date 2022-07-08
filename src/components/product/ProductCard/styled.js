@@ -1,11 +1,4 @@
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/react";
-
-const Shine = keyframes`
-  to {
-    background-position-x: -200%;
-  }
-`;
 
 export const CardWrapper = styled.div`
   position: relative;
