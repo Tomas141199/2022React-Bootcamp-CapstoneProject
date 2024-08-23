@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        &#169; Ecommerce created during Wizeline’s Academy React Bootcamp
+        &#169; Ecommerce created by Virtual Vanguard
       </FooterContent>
     </FooterContainer>
   );
